@@ -3,17 +3,29 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
+import styled from "styled-components"
+
+import config from "../utils/config"
+
+const ImageConatiner = styled.div`
+  max-width: 300px;
+  margin-bottom: 1.45rem;
+`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <Seo
+      title="Home"
+      description="Welcome to GatsbyJs"
+      url={`${config.siteUrl}`}
+    />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <ImageConatiner>
       <Image />
-    </div>
+    </ImageConatiner>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
